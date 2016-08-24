@@ -3,6 +3,7 @@ import {createStore} from "redux";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Immutable from 'immutable';
+require("../sass/styles.scss")
 
 const validateIndex  = (index,list) => 0 <= index && index < list.size;
 

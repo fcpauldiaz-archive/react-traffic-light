@@ -1,5 +1,6 @@
 $traffic-light-width: 200px;
 $light-size: $traffic-light-width*0.85;
+
 .traffic-light{
   background: black;
   margin-bottom: 10px;
@@ -7,7 +8,7 @@ $light-size: $traffic-light-width*0.85;
   width: $traffic-light-width;
 
   .light{
-    background: white;
+    background: blue;
     border-radius: 100%;
     height: $light-size;
     margin: 0 auto 10px auto;
