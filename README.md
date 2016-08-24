@@ -1,2 +1,5 @@
-# basic-webpack-setup
-Basic webpack setup to test ES6
+# React Redux Traffic Light
+
+Usage Instructions
+- npm install
+- npm run dev
