@@ -7,7 +7,7 @@ require("../sass/styles.scss")
 
 const validateIndex  = (index,list) => 0 <= index && index < list.size;
 
-const Counter = ({changeToRed, changeToYellow, changeToGreen}) => (
+const Traffic = ({changeToRed, changeToYellow, changeToGreen}) => (
 		<div>
 			<button onClick={ changeToRed}>Turn on Red</button>
 			<button onClick={ changeToYellow}>Turn on Yellow</button>
@@ -15,10 +15,10 @@ const Counter = ({changeToRed, changeToYellow, changeToGreen}) => (
 			
 		</div>
 )
-const CounterList = ({ list }) => (
+const TrafficList = ({ list }) => (
 	<div>
 		{
-			<Counter
+			<Traffic
 				changeToRed={
 					() => store.dispatch({
 						type: 'TURN_ON_RED',
@@ -42,7 +42,7 @@ const CounterList = ({ list }) => (
 	</div>
 );
 //reductor
-const counterList = (state, action) => {
+const trafficReducer = (state, action) => {
   if(typeof action.payload !== 'undefined'){
     var { index } = action.payload;
   }
@@ -58,7 +58,7 @@ const counterList = (state, action) => {
   }
 } 
 
-const store = createStore(counterList);
+const store = createStore(trafficReducer);
 
 const render = () => {
 	console.log(store.getState());
@@ -70,7 +70,7 @@ const render = () => {
 			<div class="yellow light"  className={store.getState().yellow}></div>
 			<div class="green light off"  className={store.getState().green}></div>
 		</div>
-		<CounterList list={ store.getState()}/>
+		<TrafficList list={ store.getState()}/>
 	</div>,
 		document.getElementById('root')
 	);
